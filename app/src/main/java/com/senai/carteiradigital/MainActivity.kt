@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,16 +23,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.rafaelcosta.myapplication.QrCode
 import com.senai.carteiradigital.ui.theme.CarteirinhaDigitalTheme
 
-/**
- * The main entry point of the application.
- *
- * This activity is responsible for setting up the main UI of the application
- * using Jetpack Compose. It displays a digital student ID card.
- */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,55 +43,84 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    /**
-     * Composable function representing the Digital Student ID (Carteirinha Digital) screen.
-     * This function displays a student's information including photo, personal details, and QR code.
-     *
-     * @param modifier The modifier to be applied to the layout
-     */
     @Composable
     fun CarteirinhaDigitalApp(modifier: Modifier = Modifier) {
-
-        // Column layout that fills the entire screen with padding and center alignment
-        Column(
-            modifier = modifier
-                .fillMaxSize() // Makes the column occupy the entire available space
-                .padding(16.dp), // Adds 16dp padding around the content
-            horizontalAlignment = Alignment.CenterHorizontally, // Centers children horizontally
-            verticalArrangement = Arrangement.SpaceEvenly // Distributes children evenly vertically
-        ) {
-
-            // Displays the Senai institution logo
+        Box(modifier = modifier.fillMaxSize()) {
+            
             Image(
-                painter = painterResource(id = R.drawable.logosenai),
-                contentDescription = "Logo Senai",
-                contentScale = ContentScale.Fit,
-                modifier = Modifier
-                    .weight(0.3f)
-                    .fillMaxWidth()
-            )
-
-            // Displays the student's profile photo with weight for sizing
-            Image(
-                painter = painterResource(id = R.drawable.chico),
-                contentDescription = "Foto de Perfil", // Profile photo description
+                painter = painterResource(id = R.drawable.senai),
+                contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .weight(.2f)
-                    .size(200.dp)
-                    .clip(CircleShape)
-                    .aspectRatio(1f)
+                modifier = Modifier.fillMaxSize(),
+                alpha = 0.10f
             )
 
-            // Displays student information as text
-            Text(text = "Nome: Allan") // Student's name
-            Text(text = "Curso: ADS") // Course name
-            Text(text = "Turma: 4° DEVSM") // Class information
-            Text(text = "Matrícula: 2026") // Student ID
-            Text(text = "Data de Nascimento: 21/09/2005") // Date of birth
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceEvenly
+            ) {
 
-            // Displays the QR code containing student identification number
-            QrCode("90000000001382838830")
+                Image(
+                    painter = painterResource(id = R.drawable.logosenai),
+                    contentDescription = "Logo Senai",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .weight(0.25f)
+                        .fillMaxWidth()
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.chico),
+                    contentDescription = "Foto de Perfil",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .weight(.25f)
+                        .size(200.dp)
+                        .clip(CircleShape)
+                        .aspectRatio(1f)
+                )
+
+                // Informações do Aluno com tipografia maior e mais visível
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Text(
+                        text = "Nome: Allan",
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        text = "Curso: ADS",
+                        style = MaterialTheme.typography.titleLarge,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        text = "Turma: 4° DEVSM",
+                        style = MaterialTheme.typography.titleMedium,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        text = "Matrícula: 2026",
+                        style = MaterialTheme.typography.titleMedium,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        text = "Data de Nascimento: 21/09/2005",
+                        style = MaterialTheme.typography.titleMedium,
+                        textAlign = TextAlign.Center
+                    )
+                }
+
+                Box(modifier = Modifier.weight(0.2f), contentAlignment = Alignment.Center) {
+                    QrCode("90000000001382838830")
+                }
+            }
         }
     }
 }
