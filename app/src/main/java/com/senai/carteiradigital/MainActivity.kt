@@ -16,7 +16,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,7 +23,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rafaelcosta.myapplication.QrCode
@@ -46,7 +44,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun CarteirinhaDigitalApp(modifier: Modifier = Modifier) {
         Box(modifier = modifier.fillMaxSize()) {
-            
+
             Image(
                 painter = painterResource(id = R.drawable.senai),
                 contentDescription = null,
@@ -83,37 +81,31 @@ class MainActivity : ComponentActivity() {
                         .aspectRatio(1f)
                 )
 
-                // Informações do Aluno com tipografia maior e mais visível
+                // Usando o ValueText corrigido para maior visibilidade
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                    verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
-                    Text(
-                        text = "Nome: Allan",
-                        style = MaterialTheme.typography.headlineSmall,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary,
-                        textAlign = TextAlign.Center
+                    ValueText(
+                        value = "Nome: Allan",
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold
                     )
-                    Text(
-                        text = "Curso: ADS",
-                        style = MaterialTheme.typography.titleLarge,
-                        textAlign = TextAlign.Center
+                    ValueText(
+                        value = "Curso: ADS",
+                        fontSize = 20.sp
                     )
-                    Text(
-                        text = "Turma: 4° DEVSM",
-                        style = MaterialTheme.typography.titleMedium,
-                        textAlign = TextAlign.Center
+                    ValueText(
+                        value = "Turma: 4° DEVSM",
+                        fontSize = 18.sp
                     )
-                    Text(
-                        text = "Matrícula: 2026",
-                        style = MaterialTheme.typography.titleMedium,
-                        textAlign = TextAlign.Center
+                    ValueText(
+                        value = "Matrícula: 2026",
+                        fontSize = 18.sp
                     )
-                    Text(
-                        text = "Data de Nascimento: 21/09/2005",
-                        style = MaterialTheme.typography.titleMedium,
-                        textAlign = TextAlign.Center
+                    ValueText(
+                        value = "Nasc: 21/09/2005",
+                        fontSize = 18.sp
                     )
                 }
 
