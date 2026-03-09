@@ -65,7 +65,7 @@ fun CarteirinhaView(
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .weight(.25f)
-                    .size(200.dp)
+                    .size(150.dp)
                     .clip(CircleShape)
                     .aspectRatio(1f)
             )
