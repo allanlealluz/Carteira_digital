@@ -1,6 +1,5 @@
-package com.rafaelcosta.carteirinhadigital_4devm_t1.core.designsystem.navigation
+package com.senai.carteiradigital.core.designsystem.navigation
 
-import com.senai.carteiradigital.feature.carteirinha.presentation.screen.CarteirinhaScreen
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -10,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.senai.carteiradigital.feature.auth.presentation.screen.LoginScreen
+import com.senai.carteiradigital.feature.carteirinha.presentation.screen.CarteirinhaScreen
 
 @Composable
 fun AppNavHost(
