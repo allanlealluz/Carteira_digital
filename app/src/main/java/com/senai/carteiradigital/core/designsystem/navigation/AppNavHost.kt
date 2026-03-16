@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.senai.carteiradigital.feature.auth.presentation.screen.LoginScreen
 import com.senai.carteiradigital.feature.carteirinha.presentation.screen.CarteirinhaScreen
+import com.senai.carteiradigital.feature.home.presentation.screen.HomeScreen
 
 @Composable
 fun AppNavHost(
@@ -29,6 +30,13 @@ fun AppNavHost(
         }
         composable(Routes.Carteirinha.route) {
             CarteirinhaScreen(
+                modifier = Modifier
+                    .fillMaxSize()
+            )
+        }
+        composable(Routes.Home.route) {
+            HomeScreen(
+                navController = navController,
                 modifier = Modifier
                     .fillMaxSize()
             )

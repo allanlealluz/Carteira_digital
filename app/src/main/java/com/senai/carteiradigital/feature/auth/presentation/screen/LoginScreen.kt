@@ -35,7 +35,7 @@ fun LoginScreen(
             onSenhaChange = { senha = it },
             onLoginClick = {
                 navController.navigate(
-                    Routes.Carteirinha.route
+                    Routes.Home.route
                 )
             }
         )
