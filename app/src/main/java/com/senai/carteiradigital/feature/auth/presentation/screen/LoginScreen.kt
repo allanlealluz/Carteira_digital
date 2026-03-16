@@ -7,7 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import com.rafaelcosta.carteirinhadigital_4devm_t1.core.designsystem.navigation.Routes
+import com.senai.carteiradigital.core.designsystem.navigation.Routes
 
 @Composable
 fun LoginScreen(

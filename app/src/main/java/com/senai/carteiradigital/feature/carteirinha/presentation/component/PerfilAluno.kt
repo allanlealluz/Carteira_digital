@@ -40,7 +40,7 @@ fun PerfilAluno(modifier: Modifier = Modifier) {
         )
         InfoAluno(
             labelText = "Nome",
-            valueText = "Rafael Costa",
+            valueText = "Allan Leal",
             modifier = Modifier.fillMaxWidth(),
         )
         InfoAluno(
