@@ -1,4 +1,4 @@
-package com.rafaelcosta.carteirinhadigital_4devm_t1.feature.carteirinha.presentation.screen
+package com.senai.carteiradigital.feature.carteirinha.presentation.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -14,10 +14,10 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.rafaelcosta.carteirinhadigital_4devm_t1.R
-import com.rafaelcosta.carteirinhadigital_4devm_t1.core.designsystem.theme.CarteirinhaDigital_4DEVM_T1Theme
-import com.rafaelcosta.carteirinhadigital_4devm_t1.feature.carteirinha.presentation.component.PerfilAluno
-import com.rafaelcosta.carteirinhadigital_4devm_t1.feature.carteirinha.presentation.component.QrCode
+import com.senai.carteiradigital.R
+import com.senai.carteiradigital.core.designsystem.theme.theme.CarteirinhaDigitalTheme
+import com.senai.carteiradigital.feature.carteirinha.presentation.component.PerfilAluno
+import com.senai.carteiradigital.feature.carteirinha.presentation.component.QrCode
 
 @Composable
 fun CarteirinhaContent(
@@ -28,12 +28,12 @@ fun CarteirinhaContent(
         modifier = modifier.fillMaxSize()
     ) {
         Image(
-            painter = painterResource(R.drawable.plano_de_fundo),
+            painter = painterResource(R.drawable.senai),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxSize()
-                .alpha(0.7f)
+                .alpha(0.1f)
         )
 
         Column(
@@ -44,7 +44,7 @@ fun CarteirinhaContent(
             verticalArrangement = Arrangement.SpaceAround
         ) {
             Image(
-                painter = painterResource(R.drawable.senai_s_o_paulo_logo),
+                painter = painterResource(R.drawable.logosenai),
                 contentDescription = "Logo do SENAI São Paulo",
                 modifier = Modifier.fillMaxWidth(0.6f)
             )
@@ -67,7 +67,7 @@ fun CarteirinhaContent(
 )
 @Composable
 fun CarteirinhaContentPreviewClaro() {
-    CarteirinhaDigital_4DEVM_T1Theme(darkTheme = false) {
+    CarteirinhaDigitalTheme(darkTheme = false) {
         CarteirinhaContent()
     }
 }
@@ -78,7 +78,7 @@ fun CarteirinhaContentPreviewClaro() {
 )
 @Composable
 fun CarteirinhaContentPreviewEscuro() {
-    CarteirinhaDigital_4DEVM_T1Theme(darkTheme = true) {
+    CarteirinhaDigitalTheme(darkTheme = true) {
         CarteirinhaContent()
     }
 }
