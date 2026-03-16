@@ -1,4 +1,4 @@
-package com.rafaelcosta.carteirinhadigital_4devm_t1.feature.carteirinha.presentation.component
+package com.senai.carteiradigital.feature.carteirinha.presentation.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -15,7 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.rafaelcosta.carteirinhadigital_4devm_t1.R
+import com.senai.carteiradigital.R
 
 @Composable
 fun PerfilAluno(modifier: Modifier = Modifier) {
@@ -30,7 +30,7 @@ fun PerfilAluno(modifier: Modifier = Modifier) {
         )
     ) {
         Image(
-            painter = painterResource(R.drawable.avatar_login),
+            painter = painterResource(R.drawable.chico),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier

@@ -1,4 +1,4 @@
-package com.rafaelcosta.carteirinhadigital_4devm_t1.feature.carteirinha.presentation.screen
+package com.senai.carteiradigital.feature.carteirinha.presentation.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -8,7 +8,7 @@ fun CarteirinhaScreen(
     modifier: Modifier = Modifier
 ) {
     CarteirinhaContent(
-        qrCodeContent = "seunumerodematriculaaqui",
+        qrCodeContent = "90000000001382838830",
         modifier = modifier
     )
 }

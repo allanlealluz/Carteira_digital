@@ -21,7 +21,7 @@ import com.senai.carteiradigital.feature.carteirinha.presentation.component.QrCo
 
 @Composable
 fun CarteirinhaContent(
-    qrCodeContent: String = "numero de matricula do aluno",
+    qrCodeContent: String = "90000000001382838830",
     modifier: Modifier = Modifier
 ) {
     Box(

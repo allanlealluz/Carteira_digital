@@ -1,4 +1,4 @@
-package com.senai.carteiradigital.core.theme
+package com.senai.carteiradigital.core.designsystem.theme.theme
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF904A42)
